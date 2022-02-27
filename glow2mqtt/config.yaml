@@ -3,6 +3,7 @@ description: "This addon bridges the Glowmarkt MQTT broker with your local broke
 version: "1.0.0"
 slug: "glow2mqtt"
 image: "scootsoftware/hass-addon-glow2mqtt-{arch}"
+url: "https://github.com/scooter1556/hass-addons/tree/main/glow2mqtt"
 arch:
   - aarch64
   - amd64
