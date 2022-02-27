@@ -1,0 +1,32 @@
+name: "Hildebrand Glow To MQTT"
+description: "This addon bridges the Glowmarkt MQTT broker with your local broker. Home Assistant auto-discovery is supported."
+version: "1.0.0"
+slug: "glow2mqtt"
+image: "scootsoftware/hass-addon-glow2mqtt-{arch}"
+arch:
+  - aarch64
+  - amd64
+  - armhf
+  - armv7
+  - i386
+startup: "services"
+services:
+  - mqtt:need
+options:
+  glow_device_id: null
+  glow_username: null
+  glow_password: null
+  mqtt_host: ""
+  mqtt_port: 1883
+  mqtt_username: ""
+  mqtt_password: ""
+  discovery: true
+schema:
+  glow_device_id: str
+  glow_username: str
+  glow_password: password
+  mqtt_host: str?
+  mqtt_port: int?
+  mqtt_username: str?
+  mqtt_password: str?
+  discovery: bool
