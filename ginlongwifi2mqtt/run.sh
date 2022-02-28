@@ -14,9 +14,9 @@ else
   export MQTT_PASSWORD=$(bashio::config "mqtt_password")
 fi
 
-GLOW_DEVICE=$(bashio::config "glow_device_id")
-GLOW_USERNAME=$(bashio::config "glow_username")
-GLOW_PASSWORD=$(bashio::config "glow_password")
+CLIENT_ID=$(bashio::config "client_id")
+LISTEN_ADDRESS=$(bashio::config "listen_address")
+LISTEN_PORT=$(bashio::config "listen_port")
 
 OTHER_ARGS=""
 
@@ -24,5 +24,5 @@ if bashio::config.true "discovery"; then
   OTHER_ARGS="${OTHER_ARGS} --homeassistant"
 fi
 
-echo "Starting glow2mqtt.py..."
-python3 -u /glow2mqtt.py --glow_device $GLOW_DEVICE --glow_username $GLOW_USERNAME --glow_password $GLOW_PASSWORD --mqtt_address $MQTT_HOST --mqtt_port $MQTT_PORT  --mqtt_username $MQTT_USERNAME --mqtt_password $MQTT_PASSWORD $OTHER_ARGS
+echo "Starting ginlong-wifi-mqtt.py..."
+python3 -u /ginlong-wifi-mqtt.py --client_id $CLIENT_ID --listen_address $LISTEN_ADDRESS --listen_port $LISTEN_PORT --mqtt_address $MQTT_HOST --mqtt_port $MQTT_PORT  --mqtt_username $MQTT_USERNAME --mqtt_password $MQTT_PASSWORD $OTHER_ARGS

@@ -19,4 +19,5 @@ For the addon to function you need to provide the following information relating
 * `glow_username`: The username associated with your Glow account (also used to login to the Bright app)
 * `glow_password`: The password associated with your Glow account (also used to login to the Bright app)
 
+Miscellaneous options:
 * `discovery`: Home Assistant automatic MQTT discovery

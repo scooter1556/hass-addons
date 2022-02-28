@@ -1,0 +1,34 @@
+name: "Ginlong Solis Wi-Fi To MQTT"
+description: "This addon makes your Ginlong Solis Wi-Fi Stick data available over MQTT in order to monitor your Solis inverter. Home Assistant auto-discovery is supported."
+version: "1.0.0"
+slug: "ginglongwifi2mqtt"
+image: "scootsoftware/hass-addon-ginlongwifi2mqtt-{arch}"
+url: "https://github.com/scooter1556/hass-addons/tree/main/ginlongwifi2mqtt"
+arch:
+  - aarch64
+  - amd64
+  - armhf
+  - armv7
+  - i386
+startup: "services"
+services:
+  - mqtt:need
+host_network: true
+options:
+  listen_address: "0.0.0.0"
+  listen_port: 9999
+  client_id: "home"
+  mqtt_host: ""
+  mqtt_port: 1883
+  mqtt_username: ""
+  mqtt_password: ""
+  discovery: true
+schema:
+  listen_address: str?
+  listen_port: int?
+  client_id: str?
+  mqtt_host: str?
+  mqtt_port: int?
+  mqtt_username: str?
+  mqtt_password: str?
+  discovery: bool
