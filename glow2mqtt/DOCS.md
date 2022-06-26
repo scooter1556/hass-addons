@@ -18,6 +18,7 @@ For the addon to function you need to provide the following information relating
 * `glow_device_id`: This is your CAD hardware ID (e.g. A8980AB7AB04)
 * `glow_username`: The username associated with your Glow account (also used to login to the Bright app)
 * `glow_password`: The password associated with your Glow account (also used to login to the Bright app)
+* `glow_provider`: The data provider is assumed to be Hildebrand (HILD). If your provider is different you can change it here (e.g. OCT for Octopus Energy)
 
 Miscellaneous options:
 * `discovery`: Home Assistant automatic MQTT discovery
