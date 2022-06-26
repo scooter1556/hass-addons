@@ -1,5 +1,4 @@
-ARG BUILD_FROM=ghcr.io/hassio-addons/base:11.1.2
-
+ARG BUILD_FROM
 FROM $BUILD_FROM
 
 ARG SRCREV=d5bca5f2a6283050e90d7e3c4d8ad8fbeb2e4565
