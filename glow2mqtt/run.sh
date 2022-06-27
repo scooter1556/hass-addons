@@ -1,17 +1,17 @@
-#!/usr/bin/env bashio
+#!/usr/bin/with-contenv bashio
 
-if bashio::services.available mqtt; then
+if bashio::services.available "mqtt"; then
   echo "MQTT found in this Home Assistant instance."
-  MQTT_HOST=$(bashio::services mqtt "host")
-  MQTT_PORT=$(bashio::services mqtt "port")
-  export MQTT_USERNAME=$(bashio::services mqtt "username")
-  export MQTT_PASSWORD=$(bashio::services mqtt "password")
+  MQTT_HOST=$(bashio::services "mqtt" "host")
+  MQTT_PASSWORD=$(bashio::services "mqtt" "password")
+  MQTT_PORT=$(bashio::services "mqtt" "port")
+  MQTT_USERNAME=$(bashio::services "mqtt" "username")
 else
   echo "Using external MQTT broker."
   MQTT_HOST=$(bashio::config "mqtt_host")
   MQTT_PORT=$(bashio::config "mqtt_port")
-  export MQTT_USERNAME=$(bashio::config "mqtt_user")
-  export MQTT_PASSWORD=$(bashio::config "mqtt_password")
+  MQTT_USERNAME=$(bashio::config "mqtt_user")
+  MQTT_PASSWORD=$(bashio::config "mqtt_password")
 fi
 
 GLOW_DEVICE=$(bashio::config "glow_device_id")
@@ -26,4 +26,4 @@ if bashio::config.true "discovery"; then
 fi
 
 echo "Starting glow2mqtt.py..."
-python3 -u /glow2mqtt.py --glow_device $GLOW_DEVICE --glow_username $GLOW_USERNAME --glow_password $GLOW_PASSWORD --glow_provider $GLOW_PROVIDER --mqtt_address $MQTT_HOST --mqtt_port $MQTT_PORT  --mqtt_username $MQTT_USERNAME --mqtt_password $MQTT_PASSWORD $OTHER_ARGS
+exec python3 -u /glow2mqtt.py --glow_device "$GLOW_DEVICE" --glow_username "$GLOW_USERNAME" --glow_password "$GLOW_PASSWORD" --glow_provider "$GLOW_PROVIDER" --mqtt_address "$MQTT_HOST" --mqtt_port "$MQTT_PORT"  --mqtt_username "$MQTT_USERNAME" --mqtt_password "$MQTT_PASSWORD" $OTHER_ARGS
