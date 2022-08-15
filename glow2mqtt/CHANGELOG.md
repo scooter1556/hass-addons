@@ -1,3 +1,7 @@
+## 1.2.0
+
+- Auto-detect available meters and units of measure
+
 ## 1.1.4
 
 - Add support for local MQTT from CAD
