@@ -1,7 +1,7 @@
 ARG BUILD_FROM
 FROM $BUILD_FROM
 
-ARG SRCREV=7ff55358eeaeb9cd222f3736b07b23095cc04f8c
+ARG SRCREV=7719760fcf5a058e860a1a012f02f6a51562f5e3
 
 # Fetch application
 RUN wget https://raw.githubusercontent.com/scooter1556/glow-mqtt/$SRCREV/glow2mqtt.py -O glow2mqtt.py

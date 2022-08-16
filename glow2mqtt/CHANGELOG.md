@@ -1,3 +1,7 @@
+## 1.2.1
+
+- Fix device class for gas sensor
+
 ## 1.2.0
 
 - Auto-detect available meters and units of measure
