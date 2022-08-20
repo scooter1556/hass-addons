@@ -1,3 +1,7 @@
+## 1.2.2
+
+- Fix incorrect gas units
+
 ## 1.2.1
 
 - Fix device class for gas sensor
