@@ -1,3 +1,7 @@
+## 1.2.3
+
+- Ignore zero readings
+
 ## 1.2.2
 
 - Fix incorrect gas units
