@@ -1,3 +1,7 @@
+## 1.2.4
+
+- Add additional data checks
+
 ## 1.2.3
 
 - Ignore zero readings
