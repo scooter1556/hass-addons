@@ -1,17 +1,17 @@
-#!/usr/bin/env bashio
+#!/usr/bin/with-contenv bashio
 
-if bashio::services.available mqtt; then
+if bashio::services.available "mqtt"; then
   echo "MQTT found in this Home Assistant instance."
-  MQTT_HOST=$(bashio::services mqtt "host")
-  MQTT_PORT=$(bashio::services mqtt "port")
-  export MQTT_USERNAME=$(bashio::services mqtt "username")
-  export MQTT_PASSWORD=$(bashio::services mqtt "password")
+  MQTT_HOST=$(bashio::services "mqtt" "host")
+  MQTT_PORT=$(bashio::services "mqtt" "port")
+  MQTT_USERNAME=$(bashio::services "mqtt" "username")
+  MQTT_PASSWORD=$(bashio::services "mqtt" "password")
 else
   echo "Using external MQTT broker."
   MQTT_HOST=$(bashio::config "mqtt_host")
   MQTT_PORT=$(bashio::config "mqtt_port")
-  export MQTT_USERNAME=$(bashio::config "mqtt_user")
-  export MQTT_PASSWORD=$(bashio::config "mqtt_password")
+  MQTT_USERNAME=$(bashio::config "mqtt_username")
+  MQTT_PASSWORD=$(bashio::config "mqtt_password")
 fi
 
 CLIENT_ID=$(bashio::config "client_id")
@@ -25,4 +25,4 @@ if bashio::config.true "discovery"; then
 fi
 
 echo "Starting ginlong-wifi-mqtt.py..."
-python3 -u /ginlong-wifi-mqtt.py --client_id $CLIENT_ID --listen_address $LISTEN_ADDRESS --listen_port $LISTEN_PORT --mqtt_address $MQTT_HOST --mqtt_port $MQTT_PORT  --mqtt_username $MQTT_USERNAME --mqtt_password $MQTT_PASSWORD $OTHER_ARGS
+exec python3 -u /ginlong-wifi-mqtt.py --client_id "$CLIENT_ID" --listen_address "$LISTEN_ADDRESS" --listen_port "$LISTEN_PORT" --mqtt_address "$MQTT_HOST" --mqtt_port "$MQTT_PORT"  --mqtt_username "$MQTT_USERNAME" --mqtt_password "$MQTT_PASSWORD" $OTHER_ARGS
