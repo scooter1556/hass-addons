@@ -1,3 +1,7 @@
+## 1.2.5
+
+- Fix MQTT username not being parsed
+
 ## 1.2.4
 
 - Add additional data checks

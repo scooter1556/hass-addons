@@ -10,7 +10,7 @@ else
   echo "Using external MQTT broker."
   MQTT_HOST=$(bashio::config "mqtt_host")
   MQTT_PORT=$(bashio::config "mqtt_port")
-  MQTT_USERNAME=$(bashio::config "mqtt_user")
+  MQTT_USERNAME=$(bashio::config "mqtt_username")
   MQTT_PASSWORD=$(bashio::config "mqtt_password")
 fi
 
