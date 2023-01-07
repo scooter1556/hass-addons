@@ -28,6 +28,10 @@ else
   OTHER_ARGS="${OTHER_ARGS} --glow_username ${GLOW_USERNAME} --glow_password ${GLOW_PASSWORD} --glow_provider ${GLOW_PROVIDER}"
 fi
 
+if bashio::config.true "caching"; then
+  OTHER_ARGS="${OTHER_ARGS} --cache"
+fi
+
 if bashio::config.true "discovery"; then
   OTHER_ARGS="${OTHER_ARGS} --homeassistant"
 fi

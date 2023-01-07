@@ -1,3 +1,8 @@
+## 1.3.0
+
+- Added caching support
+- More robust sensor discovery
+
 ## 1.2.5
 
 - Fix MQTT username not being parsed
