@@ -1,6 +1,6 @@
 name: "Hildebrand Glow To MQTT"
 description: "This addon bridges the Glowmarkt MQTT broker with your local broker. Home Assistant auto-discovery is supported."
-version: "1.3.0"
+version: "1.3.1"
 slug: "glow2mqtt"
 image: "scootsoftware/hass-addon-glow2mqtt-{arch}"
 url: "https://github.com/scooter1556/hass-addons/tree/main/glow2mqtt"
